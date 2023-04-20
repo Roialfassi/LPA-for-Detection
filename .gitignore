@@ -11,7 +11,8 @@ data/loco/json/*
 
 # C extensions
 *.so
-
+Experiments/
+Dataset/
 # Distribution / packaging
 .Python
 build/
