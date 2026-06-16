@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lpa-for-detection"
+version = "0.1.0"
+description = "Domain-based Latent Personal Analysis (LPA) and its use for impersonation detection."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
+dependencies = [
+    "pandas>=1.5.0",
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "scikit-learn",
+    "altair>=4.2.2",
+    "altair_saver",
+    "bottleneck",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+# The library is a small, flat collection of modules living in ``src/``.
+# Exposing them as top-level modules (rather than a package) keeps the existing
+# notebook imports — ``from LPA import Corpus`` — working unchanged.
+[tool.setuptools]
+package-dir = { "" = "src" }
+py-modules = ["LPA", "algo", "helpers", "visualize"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

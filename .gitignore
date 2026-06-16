@@ -11,9 +11,24 @@ data/loco/json/*
 
 # C extensions
 *.so
-Data-For-Model/
-Experiments/
-Dataset/
+
+# --- Local data & experiment outputs (large; kept out of git) ---
+# These live at the repo root so the notebooks' relative paths keep working.
+# Leading slash anchors to the repo root so they don't also match, e.g.,
+# notebooks/experiments/ (case-insensitive filesystems match "Experiments").
+/Data-For-Model/
+/Experiments/
+/Dataset/
+/Idea-Dataset/
+/archive/
+*.zip
+# Ignore everything inside data/ except its README
+/data/*
+!/data/README.md
+
+# IDE
+.idea/
+
 # Distribution / packaging
 .Python
 build/
